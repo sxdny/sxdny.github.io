@@ -1,17 +1,44 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>sidneysilva.me</title>
-    </head>
-    <body>
-        <main class="m-5 flex flex-col">
-            <header>
-                <h1 class="text-xl font-mono">sidneysilva.me</h1>
-                <p >My persobal website.</p>
-            </header>
-        </main>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>sidneysilva.me</title>
+  </head>
+  <body class="flex flex-col max-h-screen h-screen max-w-screen w-screen p-5">
+    <main class="flex flex-1 flex-col max-w-screen">
+      <header>
+        <div>
+          <h1 class="text-xl underline underline-offset-2">sidneysilva.me</h1>
+          <div class="flex items-center gap-2 text-xs text-neutral-500 my-1">
+            <p>Málaga, Spain</p>
+            <p>·</p>
+            <p>Studing Data Engineering</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 my-4 tracking-wide">
+          <p class="text-sm text-neutral-700">
+            Just trying to land a job at the Programming market. I like how
+            technology (sometimes) can change the world and people's lives for
+            the better.
+          </p>
+          <p class="text-sm text-neutral-700 max-w-4xl leading-6">
+            Currently learning and developing by my own, via
+            <a
+              class="underline text-black"
+              href="https://www.codecademy.com/profiles/sidneysbo"
+              >Codeacademy</a
+            >, <a
+              class="underline text-black"
+              href="https://leetcode.com/u/sxdny/">LeetCode</a
+            >, Youtube videos and more. I really believe in self-study and in
+            the possibility of achieving anything with dedication, effort and
+            consistency.
+          </p>
+        </div>
+      </header>
+    </main>
+  </body>
 </html>
