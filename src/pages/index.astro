@@ -1,7 +1,27 @@
 ---
 import "../styles/global.css";
-import { Button } from "@/components/ui/button";
+import DarkModeToggle from "@/components/darkModeToggle";
+import Navbar from "@/components/navbar.astro";
 ---
+
+<script>
+  let darkMode = localStorage.getItem("dark")
+
+  if(darkMode == null) {
+    localStorage.setItem("dark", "false")
+    darkMode = "false"
+  }
+
+  let bodyElement = document.getElementsByTagName("body");
+
+  if (darkMode?.toLowerCase() === "true") {
+    bodyElement[0].classList.add("dark");
+  } else {
+    bodyElement[0].classList.remove("dark");
+  }
+
+  console.log(darkMode);
+</script>
 
 <html lang="en">
   <head>
@@ -11,7 +31,11 @@ import { Button } from "@/components/ui/button";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
-	<Button>This is a default button</Button>
+
+  <body class="flex flex-col items-center">
+    <Navbar>
+      <DarkModeToggle client:only />
+    </Navbar>
+    <slot />
   </body>
 </html>
