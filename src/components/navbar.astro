@@ -3,11 +3,14 @@ import { Button } from "@/components/ui/button";
 ---
 
 <nav class="flex justify-between items-center max-w-4xl w-full p-5">
-  <Button className="text-xl" variant="link">sidneysilva.me</Button>
+  <a href="/">
+    <Button className="text-xl" variant="link">sidneysilva.me</Button>
+  </a>
 
-  <ul class="flex items-center">
-    <li><Button variant="link">About me</Button></li>
-    <li><Button variant="link">Projects</Button></li>
-    <li><slot/></li>
+  <ul class="flex items-center text-sm gap-3">
+    <li>
+      <a href="/aboutme"> <Button asChild variant="link">About me</Button></a>
+    </li>
+    <li><slot /></li>
   </ul>
 </nav>
