@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+import DarkModeToggle from "@/components/darkModeToggle";
+import Navbar from "@/components/navbar.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<script>
+  let darkMode = localStorage.getItem("dark");
+
+  if (darkMode == null) {
+    localStorage.setItem("dark", "false");
+    darkMode = "false";
+  }
+
+  let bodyElement = document.getElementsByTagName("body");
+
+  if (darkMode?.toLowerCase() === "true") {
+    bodyElement[0].classList.add("dark");
+  } else {
+    bodyElement[0].classList.remove("dark");
+  }
+
+  console.log(darkMode);
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+
+  <body class="flex flex-col items-center">
+    <Navbar>
+      <DarkModeToggle client:only />
+    </Navbar>
+    <main class="max-w-4xl p-9 w-full">
+      <header class="flex flex-col gap-2">
+        <h1 class="text-4xl font-normal">{frontmatter.title}</h1>
+        <div
+          class="flex text-lg items-center gap-2 dark:text-neutral-500 font-light"
+        >
+          <p>
+            {frontmatter.description}
+          </p>
+          <span>·</span>
+          <time>{frontmatter.date}</time>
+        </div>
+
+        <hr class="my-4" />
+      </header>
+      <div
+        class="prose prose-img:rounded-xl prose-headings:underline prose-p:text-blue-600"
+      >
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>

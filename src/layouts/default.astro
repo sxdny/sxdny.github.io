@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import DarkModeToggle from "@/components/darkModeToggle";
 import Navbar from "@/components/navbar.astro";
+
+let { title } = Astro.props;
 ---
 
 <script>
@@ -29,15 +31,15 @@ import Navbar from "@/components/navbar.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{title}</title>
   </head>
 
   <body class="flex flex-col items-center">
     <Navbar>
       <DarkModeToggle client:only />
     </Navbar>
-    <main class="max-w-4xl p-8 w-full border">
-      <p class="text-sm text-neutral-300">Listar proyectos aquí.</p>
+    <main class="max-w-4xl p-8 w-full">
+      <slot />
     </main>
   </body>
 </html>

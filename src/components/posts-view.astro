@@ -1,0 +1,31 @@
+---
+import { Button } from "./ui/button";
+
+const posts = Object.values(
+  import.meta.glob("/src/pages/posts/*.md", { eager: true })
+);
+---
+
+<div class="flex flex-col gap-3">
+  <h1 class="text-2xl font-medium">Posts</h1>
+  <p class="font-light text-lg dark:text-neutral-300">
+    Some posts about programming stuff that I like:
+  </p>
+  <ul class="text-lg dark:text-neutral-300 list-disc py-1">
+    {
+      posts.map((post) => (
+        <li class="font-light text-md list-disc flex items-center gap-2">
+          <span class="text-neutral-500 dark:text-neutral-400">{post.frontmatter.date}</span>
+          <a href={post.url}>
+            <Button
+              className="p-0 font-normal text-md underline dark:hover:text-lime-300 hover:text-lime-600  cursor-pointer"
+              variant="link"
+            >
+              {post.frontmatter.title}
+            </Button>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

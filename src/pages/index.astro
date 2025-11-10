@@ -1,64 +1,12 @@
 ---
-import "../styles/global.css";
-import DarkModeToggle from "@/components/darkModeToggle";
-import Navbar from "@/components/navbar.astro";
-import { Button } from "@/components/ui/button";
+import Default from "@/layouts/default.astro";
+import ProjectsView from "@/components/projects-view.astro";
+import PostsView from "@/components/posts-view.astro"
 ---
 
-<script>
-  let darkMode = localStorage.getItem("dark");
-
-  if (darkMode == null) {
-    localStorage.setItem("dark", "false");
-    darkMode = "false";
-  }
-
-  let bodyElement = document.getElementsByTagName("body");
-
-  if (darkMode?.toLowerCase() === "true") {
-    bodyElement[0].classList.add("dark");
-  } else {
-    bodyElement[0].classList.remove("dark");
-  }
-
-  console.log(darkMode);
-</script>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>sidneysilva.me</title>
-  </head>
-
-  <body class="flex flex-col items-center">
-    <Navbar>
-      <DarkModeToggle client:only />
-    </Navbar>
-    <main class="max-w-4xl p-8 w-full">
-      <div class="flex flex-col gap-3">
-        <h1 class="text-2xl font-semibold">Projects</h1>
-        <p class="text-lg dark:text-neutral-300">
-          Here there's some projects that I built recently:
-        </p>
-        <ul class="text-lg dark:text-neutral-300 list-disc px-7 py-1">
-          <li>
-            A collection of Codecademy Python projects:
-            <a href="https://github.com/sxdny/cc-python-projects
-            ">
-              <Button
-                className="p-0 text-lg underline dark:hover:text-lime-300 hover:text-lime-600  cursor-pointer"
-                variant="link">cc-python-projects</Button
-              >
-            </a>
-          </li>
-          <li class="italic">
-            More projects coming soon...
-          </li>
-        </ul>
-      </div>
-    </main>
-  </body>
-</html>
+<Default title="sidneysilva.me">
+  <div class="flex flex-col gap-8">
+    <PostsView />
+    <ProjectsView />
+  </div>
+</Default>
