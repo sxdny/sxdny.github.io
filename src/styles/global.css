@@ -9,6 +9,11 @@
     display: none;
 }
 
+.katex-display {
+    display: block;
+    overflow-x: auto;
+}
+
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
