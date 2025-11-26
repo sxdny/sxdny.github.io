@@ -9,6 +9,10 @@
     display: none;
 }
 
+math {
+    overflow-x: auto;
+}
+
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
