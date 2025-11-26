@@ -42,13 +42,13 @@ const { frontmatter } = Astro.props;
       <header class="flex flex-col gap-2">
         <h1 class="text-4xl font-normal">{frontmatter.title}</h1>
         <div
-          class="flex text-lg items-center gap-2 dark:text-neutral-500 font-light"
+          class="flex flex-col items-start md:flex-row text-lg md:items-center gap-2 dark:text-neutral-400 text-neutral-500 font-light"
         >
           <p>
             {frontmatter.description}
           </p>
-          <span>·</span>
-          <time>{frontmatter.date}</time>
+          <span class="hidden md:inline">·</span>
+          <time class="italic text-sm">{frontmatter.date}</time>
         </div>
       </header>
       <div
