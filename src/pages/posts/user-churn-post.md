@@ -5,11 +5,14 @@ description: "Calculating the user's churn rate from a website with SQL."
 date: '25-11-2025'
 ---
 
-It's been a nearly two month ever since I started doing the Data Engineer course from Codecademy.
+It's been a nearly two months since I started doing the Data Engineer course from Codecademy.
 
-Yesterday, I was doing some project that requires a little bit of explanation and instead of creating a PowerPoint slide, I thought about publishing it in my blog and explain the thought process behind all the queries and all of that. I'll be answering a couple of questions that the exercise provided as well.
+Yesterday, I was doing some project that requires a little bit of explanation and instead of creating a PowerPoint slide, I thought about publishing my work in my blog and explain the thought process behind all the steps provided by the problem / exercise.
 
-So, yeah. Let's go.
+
+I'll just be explaining how do the statements work, some definitions and I think that's it.
+
+So, yeah. Let's start.
 
 <br>
 
@@ -22,27 +25,30 @@ So, yeah. Let's go.
 
 A churn rate is the percent of subscribers that have canceled his subscription on a service / app within a certain period of time, usually a month. In order for a user base to grow, the churn rate must be less than the new subscriber rate for the same period.
 
-To calculate the churn rate, we only will be considering users who are subscribed at the **beginning of the month.**
+To calculate the churn rate, we only will be considering users who are subscribed at the **beginning of the month**.
 
-The churn rate is the number of these users who cancel during the month divided by the total number. We can get it with the following formula:
+We can get the churn rate with the following formula:
 
 <br>
 
 $$
-\huge \text{churn rate} =  \frac{\text{cancellations}}{\text{total subscribers}}
+\Large \text{churn rate} =  \frac{\text{cancellations}}{\text{total subscribers}}
 $$
 
 <br>
     
-For example, we want to get the churn rate for a video streaming service (Netflix f.e) for the month of February. Knowing that we have $1000$ customer at the beginning of that month and $250$ of these, canceled his subscription, the churn rate would be the following:
+For example, we want to get the churn rate for a video streaming service (Netflix 2 f.e) for the month of February. Knowing that we have $1000$ customer at the beginning of that month and $250$ of these, canceled his subscription, the churn rate would be the following:
 
 <br>
 
 $$
-\huge 250 \div 1000 = 25\% \text{ churn rate}
+\Large 250 \div 1000 = 25\% \text{ churn rate}
 $$
 
 <br>
+    
+Now that we know this, I can start explaining the exercise.
+
 <br>
 
 ---
@@ -50,26 +56,26 @@ $$
 <br>
 <br>
 
-# Imaginary company information
+# The company information
 
 We have a company called CodeFlix, a streaming video startup, that is interested in measuring their user churn rate.
 
-We created a database for this company. Inside, we have a table called `subscriptions`. Within the table, there are 4 columns:
+We created a table for this called `subscriptions`. Within the table, there are 4 columns:
 
 - `id`. the subscription's id.
-- `segment`.this identifies which segment the subscription owner belongs to.
+- `segment`. that identifies which segment the subscription owner belongs to.
 - `subscription_start`. the start date of the subscription.
-- `subscription_end`. the cancel date of the subscription. if the value is `null`, it means that the subscription hasn't been canceled (yet).
+- `subscription_end`. the cancel date of the subscription. if the value is `null`, it means that the subscription hasn't been canceled (yet xd).
 
-CodeFlix requires a minimun subscription length of 31 days, meaning that a user can never start and end their subscription in the same month.
+**Note:** CodeFlix requires a minimun subscription length of 31 days, meaning that a user can never start and end their subscription in the same month.
 
-Let's have a look inside this table:
+Let's have a look inside the table:
 
 ```sql
 SELECT * FROM subscriptions;
 ```
 
-Output:
+The output would be the following:
 
 | id  | subscription_start | subscription_end | segment |
 | --- | ------------------ | ---------------- | ------- |
@@ -91,7 +97,9 @@ Output:
     
 ## Determining the range of months that the company has been active
 
-Because we have the starting and ending date for each subscription, we can select the month from the starting date with the following statement:
+This is one of the questions for this exercise. If we want to get the churn rate for all the months, we have to know on which months have the company been active. Also, for how long.
+
+Because we have the starting and ending date for each subscription, we can select the month from the starting date to get the actual month with the following statement:
 
 ```sql
 SELECT DISTINCT strftime('%m', subscription_start) AS month
@@ -112,7 +120,7 @@ WITH operative_months AS (
 )
 ```
 
-With this table, we will get a table with the following data:
+If we select the content inside, we would get the following table:
 
 |month | year |
 |-----|------|
@@ -121,7 +129,7 @@ With this table, we will get a table with the following data:
 |02|2017|
 |03|2017|
 
-Once we have this table created, we can create a `months` table, containing the first and last day for each month listed before. This way, we can compare the dates more easily later.
+Once we have this table created, we can create a `months` temporary table, containing the first and last day for each month listed before. This way, we can compare the dates more easily later.
 
 We can create this table using the following statement:
 
@@ -321,6 +329,10 @@ Here we can see that the churn rate is higher in the 30 segment than the 87 one.
 
  I learned a lot doing this single project: some SQL functions, behaviours and how I can use the language to get important information for companies.
 
-I hope my explanation was good enough. Thank you.
+I hope my explanation was good enough. For now, I'm not very good explaining this kind of things (and so on in English). So maybe, Im just creating new words and stuff. But I will get better.
 
-<3
+Thank you so much for your attention!
+
+```
+> o/
+```
