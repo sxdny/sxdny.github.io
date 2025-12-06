@@ -3,6 +3,7 @@ layout: ../../layouts/post.astro
 title: "churn rate with SQL."
 description: "Calculating the user's churn rate from a website with SQL."
 date: '25-11-2025'
+tags: ['SQL', 'Data Science', 'Project']
 ---
 
 It's been a nearly two months since I started doing the Data Engineer course from Codecademy.

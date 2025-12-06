@@ -1,22 +1,12 @@
 ---
 import { Button } from "./ui/button";
+import { projects_list } from "../lib/projects";
+import ShowProject from "@/components/project";
 ---
 
-<div class="flex flex-col gap-3">
-  <h1 class="text-2xl font-medium">Projects</h1>
-  <p class="font-light text-lg dark:text-neutral-300">
-    Here there's some projects that I built recently:
-  </p>
-  <ul class="font-light text-lg dark:text-neutral-300 list-disc px-7 py-1">
-    <li>
-      A collection of Codecademy Python projects:
-      <a href="https://github.com/sxdny/cc-python-projects
-            ">
-        <Button
-          className="p-0 font-normal text-lg underline dark:hover:text-lime-300 hover:text-lime-600  cursor-pointer"
-          variant="link">cc-python-projects</Button
-        >
-      </a>
-    </li>
-  </ul>
+<div class="flex flex-col gap-4">
+    <h1 class="text-2xl font-medium">Projects</h1>
+    <ul class="font-light text-lg dark:text-neutral-300 list-disc">
+        {projects_list.map((project) => <ShowProject project={project} />)}
+    </ul>
 </div>

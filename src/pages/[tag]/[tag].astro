@@ -1,0 +1,39 @@
+---
+import Default from "@/layouts/default.astro";
+import { getTagsPaths, getPrettyTag } from "@/lib/tags";
+import { getPostsWithTag} from "@/lib/posts"
+import { Button } from "@/components/ui/button";
+
+const { tag } = Astro.params;
+
+export function getStaticPaths() {
+    return getTagsPaths();
+}
+
+let postsWithTag = getPostsWithTag(tag);
+---
+
+<Default title="sidneysilva.me - About me">
+    <div class="flex flex-col gap-6">
+        <header class="flex items-center gap-2">
+            <h1 class="dark:text-neutral-400 text-3xl">Tags</h1>
+            <span class="dark:text-neutral-400 text-3xl font-medium">/</span>
+            <span class="text-3xl"> {getPrettyTag(tag)} </span>
+        </header>
+        {
+          postsWithTag.map((post) => (
+            <li class="font-light text-md list-disc flex items-center gap-2">
+              <span class="text-neutral-500 dark:text-neutral-400">{post.frontmatter.date}</span>
+              <a href={post.url}>
+                <Button
+                  className="p-0 font-normal text-md underline dark:hover:text-lime-300 hover:text-lime-600  cursor-pointer"
+                  variant="link"
+                >
+                  {post.frontmatter.title}
+                </Button>
+              </a>
+            </li>
+          ))
+        }
+    </div>
+</Default>

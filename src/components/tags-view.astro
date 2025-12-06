@@ -1,0 +1,29 @@
+---
+import { Button } from "./ui/button"
+import { getTags } from "@/lib/tags";
+
+let tags = getTags();
+---
+
+<div class="flex flex-col gap-3">
+  <h1 class="text-2xl font-medium">Tags</h1>
+  <p class="font-light text-lg dark:text-neutral-300">
+      Select a topic to see posts about it:
+  </p>
+  <ul class="mt-2 flex gap-2 text-lg dark:text-neutral-400 list-disc">
+    {
+      tags.map((tag) => (
+        <li class="font-light text-md list-none items-center gap-2">
+            <a href={`tags/${tag}`}>
+            <Button
+              className="underline underline-offset-4 px-0 font-light text-md dark:hover:text-lime-300 hover:text-lime-600  cursor-pointer rounded-none"
+              variant="link"
+            >
+              {tag}
+            </Button>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
