@@ -2,18 +2,22 @@
 import { Button } from "@/components/ui/button";
 ---
 
-<nav class="fixed items-center max-w-4xl w-full">
-    <div class="flex border border-neutral-100 dark:border-neutral-900 justify-between m-5 backdrop-blur-md rounded-xl py-5 px-3">
+<nav class="flex fixed justify-center items-center w-full bg-background">
+    <div
+        class="max-w-4xl w-full flex border-neutral-100 backdrop-blur-md dark:border-neutral-900 justify-between rounded-xl py-8 px-5"
+    >
         <a href="/">
-          <Button className="font-light text-2xl" variant="link">ssbo/</Button>
+            <Button className="font-medium text-2xl" variant="link">ssbo/</Button
+            >
         </a>
 
         <ul class="flex items-center text-sm gap-3">
-          <li>
-            <a href="/aboutme"> <Button asChild variant="link">About me</Button></a>
-          </li>
-          <li><slot /></li>
+            <li>
+                <a href="/aboutme">
+                    <Button asChild variant="link">About me</Button></a
+                >
+            </li>
+            <li><slot /></li>
         </ul>
     </div>
-
 </nav>
