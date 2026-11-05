@@ -6,6 +6,10 @@ date: '25-11-2025'
 tags: ['SQL', 'Data Science', 'Project']
 ---
 
+*Publicación escrita en Inglés*
+
+---
+
 It's been a nearly two months since I started doing the Data Engineer course from Codecademy.
 
 Yesterday, I was doing some project that requires a little bit of explanation and instead of creating a PowerPoint slide, I thought about publishing my work in my blog and explain the thought process behind all the steps provided by the problem / exercise.

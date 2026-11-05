@@ -2,12 +2,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin '@tailwindcss/typography';
+@custom-variant dark (&:is(.dark *));
 
+/* Custom Font for Headings */
 h1, h2, h3, h4, h5 {
   font-family: 'EB Garamond', sans-serif;
 }
-
-@custom-variant dark (&:is(.dark *));
 
 /* Disable KaTeX html */
 .katex-html {
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5 {
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(99.657% 0.00931 119.907);
+  --background: #FAFAVC;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
