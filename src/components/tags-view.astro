@@ -7,7 +7,7 @@ let tags = getTags();
 
 <div class="flex flex-col gap-3">
   <h1 class="text-4xl">Tags</h1>
-  <ul class="flex gap-2 text-lg dark:text-neutral-400 list-disc">
+  <ul class="md:flex flex flex-wrap gap-2 text-lg dark:text-neutral-400 list-disc">
     {
       tags.map((tag) => (
         <li class="font-light text-md list-none items-center gap-2">
