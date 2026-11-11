@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/post.astro
-title: "principios de economía: las personas enfrentan disyuntivas"
-description: "aprendiendo sobre los principios de economía"
+title: "las personas enfrentan disyuntivas"
+description: "aprendiendo sobre uno de los principios de economía"
 date: '06-11-2026'
 tags: ['Economy']
 ---
