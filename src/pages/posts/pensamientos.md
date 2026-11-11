@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/post.astro
-title: "sobre los pensamientos"
+title: "pensamientos"
 description: "pensamientos y transformación"
 date: '11-11-2026'
 tags: ['Mental', 'Thinking']

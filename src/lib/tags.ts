@@ -82,7 +82,7 @@ export function getTags() {
     post.frontmatter.tags.forEach((tag: String) => {
       let fTag = getUglyTag(tag);
 
-      !tagsList.includes(tag) ? tagsList.push(fTag) : {};
+      !tagsList.includes(fTag) ? tagsList.push(fTag) : {};
     });
   });
   return tagsList;

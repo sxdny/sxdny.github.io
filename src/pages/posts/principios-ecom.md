@@ -22,7 +22,7 @@ A continuación estaré hablando sobre el primer principio.
 
 Para obtener lo que queremos, en general tenemos que renunciar a algo que también nos gusta. No se puede ni hacer de todo ni tampoco tener de todo, nuestros recursos son limitados.
 
-Esto es como cuando un estudiante de universidad tiene que estudiar para las asignaturas de matemáticas, física y química. Cómo el tiempo del estudiante no es infinito, tiene que elegir si dedicar más tiempo a una asignatura o a otra. Si decide estudiar más para física, automáticamente tendrá menos tiempo para estudiar matemáticas. **Esto es una disyuntiva.**1
+Esto es como cuando un estudiante de universidad tiene que estudiar para las asignaturas de matemáticas, física y química. Cómo el tiempo del estudiante no es infinito, tiene que elegir si dedicar más tiempo a una asignatura o a otra. Si decide estudiar más para física, automáticamente tendrá menos tiempo para estudiar matemáticas. **Esto es una disyuntiva.**
 
 Una disyuntiva a la que nos enfrentamos como sociedad es entre la eficiencia y la equidad. La eficiencia busca extraer el máximo beneficio de los recursos escasos mientras que la equidad busca distribuir equitativamente esos beneficios. Cuándo se diseñan las políticas públicas, estos dos objetivos entran en conflicto.
 

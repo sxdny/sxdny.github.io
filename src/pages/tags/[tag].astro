@@ -20,7 +20,8 @@ let postsWithTag = getPostsWithTag(tag);
             <span class="dark:text-neutral-400 text-neutral-700 text-3xl font-medium">/</span>
             <span class="text-3xl"> {getPrettyTag(tag)} </span>
         </header>
-        {
+        <div>
+          {
           postsWithTag.map((post) => (
             <li class="font-light text-md list-disc flex items-center gap-2">
               <span class="text-neutral-500 dark:text-neutral-400">{post.frontmatter.date}</span>
@@ -35,5 +36,7 @@ let postsWithTag = getPostsWithTag(tag);
             </li>
           ))
         }
+        </div>
+        
     </div>
 </Default>

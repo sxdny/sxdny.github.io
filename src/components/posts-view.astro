@@ -15,11 +15,11 @@ const posts: Post[] = Object.values(
   <ul class="text-lg dark:text-neutral-300 list-disc py-1">
     {
       posts.map((post: Post) => (
-        <li class="font-light text-md list-disc flex items-center gap-2">
-          <span class="text-neutral-500 dark:text-neutral-400">{post.frontmatter.date}</span>
+        <li class="md:flex-row md:items-left flex-col font-light text-md list-disc md:items-center flex md:gap-2">
+          <span class="md:order-first order-last text-neutral-500 dark:text-neutral-400">{post.frontmatter.date}</span>
           <a href={post.url}>
             <Button
-              className="p-0 font-normal text-md underline dark:hover:text-lime-300 hover:text-lime-600  cursor-pointer"
+              className="p-0 md:order-last order-first font-normal text-md underline dark:hover:text-lime-300 hover:text-lime-600  cursor-pointer"
               variant="link"
             >
               {post.frontmatter.title}
