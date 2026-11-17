@@ -5,16 +5,25 @@ import type { Post } from "@/lib/posts";
 const posts: Post[] = Object.values(
   import.meta.glob("/src/pages/posts/*.md", { eager: true })
 );
+
+// TODO: Pasar a otro archivo. Aquí solo quiero mostrar
+const parseDate = (d: string): number => {
+  const [day, month, year] = d.split("-").map(Number);
+  return new Date(year, month - 1, day).getTime();
+};
+
+
+// ordenar las publicaciones por la fecha
+const sortedPosts = [...posts].sort(
+  (a, b) => parseDate(b.frontmatter.date) - parseDate(a.frontmatter.date)
+);
 ---
 
 <div class="flex flex-col gap-3">
   <h1 class="text-4xl">Publicaciones</h1>
-  <p class="font-light text-lg dark:text-neutral-300">
-    Escribiré sobre las cosas que voy aprendiendo en clase + contenido que aprendo por mi cuenta:
-  </p>
-  <ul class="text-lg dark:text-neutral-300 list-disc py-1">
+  <ul class=" text-lg dark:text-neutral-300 list-disc py-1">
     {
-      posts.map((post: Post) => (
+      sortedPosts.map((post: Post) => (
         <li class="md:flex-row md:items-left flex-col font-light text-md list-disc md:items-center flex md:gap-2">
           <span class="md:order-first order-last text-neutral-500 dark:text-neutral-400">{post.frontmatter.date}</span>
           <a href={post.url}>
